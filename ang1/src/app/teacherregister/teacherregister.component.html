@@ -1,0 +1,78 @@
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form #teacherForm="ngForm" (ngSubmit)="registerTeacher(teacherForm.value)">
+          <div class="card shadow">
+            <div class="card-header bg-success text-white text-center">
+              <h4>Teacher Registration</h4>
+            </div>
+            <div class="card-body">
+  
+              <div class="mb-3">
+                <label class="form-label">First Name</label>
+                <input type="text" name="first_name" ngModel required class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label">Last Name</label>
+                <input type="text" name="last_name" ngModel required class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" ngModel required class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label">Phone Number</label>
+                <input type="text" name="phone_number" ngModel required class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label">Address</label>
+                <input type="text" name="address" ngModel required class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label">Department</label>
+                <input type="text" name="department" ngModel required class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label">Experience (years)</label>
+                <input type="number" name="experience" ngModel required class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label">Salary</label>
+                <input type="number" name="salary" ngModel required class="form-control">
+              </div>
+
+              <div class="mb-3">
+                <label for="user_type" class="form-label">Register As</label>
+                <select class="form-select" name="user_type" id="user_type" required ngModel>
+                  <option value="teacher" selected>Teacher</option>
+                </select>
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" name="username" ngModel required class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" ngModel required class="form-control">
+              </div>
+  
+              <div class="d-grid">
+                <button class="btn btn-success" [disabled]="teacherForm.invalid">Register</button>
+              </div>
+  
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

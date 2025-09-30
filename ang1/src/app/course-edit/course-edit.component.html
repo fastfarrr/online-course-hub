@@ -1,0 +1,28 @@
+<app-course-navbar></app-course-navbar>
+<div class="edit-container">
+  <h2>Edit Course</h2>
+  <form (ngSubmit)="updateCourse()" #editForm="ngForm">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        [(ngModel)]="courseData.title"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        name="description"
+        [(ngModel)]="courseData.description"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" class="save-button">Update Course</button>
+  </form>
+</div>

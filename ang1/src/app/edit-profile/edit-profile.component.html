@@ -1,0 +1,58 @@
+<app-student-navbar></app-student-navbar>
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 rounded">
+    <h2 class="card-title text-center text-primary">Edit Profile</h2>
+    <form (ngSubmit)="onSubmit()" #editForm="ngForm">
+      
+      <!-- First Name -->
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" id="firstName" class="form-control" [(ngModel)]="user.first_name" name="first_name" required />
+      </div>
+
+      <!-- Last Name -->
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" id="lastName" class="form-control" [(ngModel)]="user.last_name" name="last_name" required />
+      </div>
+
+      <!-- Username -->
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" class="form-control" [(ngModel)]="user.username" name="username" required />
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-control" [(ngModel)]="user.email" name="email" required />
+      </div>
+
+      <!-- Address -->
+      <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" id="address" class="form-control" [(ngModel)]="user.address" name="address" />
+      </div>
+
+      <!-- Phone Number -->
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="text" id="phone" class="form-control" [(ngModel)]="user.phone_number" name="phone_number" />
+      </div>
+
+      <!-- Guardian -->
+      <div class="mb-3">
+        <label for="guardian" class="form-label">Guardian</label>
+        <input type="text" id="guardian" class="form-control" [(ngModel)]="user.guardian" name="guardian" />
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary" [disabled]="!editForm.form.valid">
+          Update Profile
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

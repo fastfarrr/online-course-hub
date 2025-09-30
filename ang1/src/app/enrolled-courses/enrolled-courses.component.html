@@ -1,0 +1,29 @@
+<app-student-navbar></app-student-navbar>
+<div class="container mt-4">
+  <h3 class="mb-4">Your Enrolled Courses</h3>
+
+  <div *ngIf="enrolledCourses.length > 0; else noCourses">
+    <div *ngFor="let course of enrolledCourses" class="card mb-3 p-3">
+      <h5>{{ course?.title || 'No name available' }}</h5>
+      <p>{{ course.description }}</p>
+      <button class="btn btn-outline-primary" (click)="viewLessons(course.id)">View Lessons</button>
+
+      <!-- Progress Bar -->
+      <div class="progress mt-3" style="height: 20px;">
+        <div
+          class="progress-bar progress-bar-striped bg-success"
+          role="progressbar"
+          [style.width.%]="course.progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          {{ course.progress }}%
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noCourses>
+    <p>You are not enrolled in any courses yet.</p>
+  </ng-template>
+</div>

@@ -1,0 +1,39 @@
+<app-course-navbar></app-course-navbar>
+<div class="container mt-4">
+    <h2 class="mb-4 text-center text-primary">Edit Lesson</h2>
+  
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="lesson_number" class="form-label">Lesson Number</label>
+        <input type="number" id="lesson_number" [(ngModel)]="lessonData.lesson_number" name="lesson_number" required class="form-control" />
+      </div>
+  
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" id="title" [(ngModel)]="lessonData.title" name="title" required class="form-control" />
+      </div>
+  
+      <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea id="content" [(ngModel)]="lessonData.content" name="content" required class="form-control" rows="4"></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="video_url" class="form-label">Video URL</label>
+        <input type="url" id="video_url" [(ngModel)]="lessonData.video_url" name="video_url" class="form-control" />
+      </div>
+  
+      <div class="mb-3">
+        <label for="pdf_file" class="form-label">PDF File</label>
+        <input type="file" id="pdf_file" (change)="onFileChange($event)" class="form-control" />
+        <div *ngIf="lessonData.pdf_file && lessonData.pdf_file.name" class="mt-1 text-success">
+          Selected: {{ lessonData.pdf_file.name }}
+        </div>
+      </div>
+  
+      <div class="d-grid mt-4">
+        <button type="submit" class="btn btn-success">Update Lesson</button>
+      </div>
+    </form>
+  </div>
+  

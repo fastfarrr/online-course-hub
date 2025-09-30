@@ -1,0 +1,11 @@
+<nav class="custom-navbar">
+  <a class="logo" routerLink="/show-my-courses">Course Hub</a>
+  <div class="nav-links">
+    <a *ngIf="selectedCourseId" [routerLink]="['/create-lesson', selectedCourseId]">Create Lesson</a>
+    <a *ngIf="selectedCourseId" [routerLink]="['/course-lessons', selectedCourseId]">View Lessons</a>
+    <a *ngIf="selectedCourseId" [routerLink]="['/enrolled-students', selectedCourseId]">View Enrolled Students</a>
+    <a routerLink="/show-my-courses">Courses</a>
+    <a (click)="logout()">Logout</a>
+
+  </div>
+</nav>

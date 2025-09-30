@@ -1,0 +1,39 @@
+.container {
+  margin-top: 30px;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+section {
+  background-color: #f4f6f8;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+table {
+  background-color: white;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+}
+
+td {
+  vertical-align: middle;
+}
+
+tr:hover {
+  background-color: #ecf0f1;
+}
+
+.alert-danger {
+  margin-top: 20px;
+}

@@ -1,0 +1,23 @@
+<!-- <p>show-my-courses works!</p> -->
+ <app-teacher-navbar></app-teacher-navbar>
+<div *ngIf="courses.length > 0; else noCourses">
+  <h2>Your Courses</h2>
+  <div class="course-card-container">
+    <div class="course-card" *ngFor="let course of courses">
+      <h3>{{ course.title }}</h3>
+      <p>{{ course.description }}</p>
+      <button (click)="editCourse(course)">Edit</button>&nbsp;
+      <button (click)="deleteCourse(course.id)">Delete</button>&nbsp;
+      <!-- <button class="btn btn-outline-dark mt-2" (click)="selectCourse(course.id)">Manage This Course</button> -->
+      <button class="btn btn-sm btn-success" (click)="createLesson(course.id)">Manage Lesson</button>&nbsp;
+      <!-- <button (click)="viewLessons(course.id)">manage Less ons</button> -->
+      <!-- <button [routerLink]="['/enrolled-students', course.id]" class="btn btn-sm btn-primary mt-2">View Enrolled Students</button> -->
+
+
+    </div>
+  </div>
+</div>
+
+<ng-template #noCourses>
+  <p>You have no courses yet.</p>
+</ng-template>

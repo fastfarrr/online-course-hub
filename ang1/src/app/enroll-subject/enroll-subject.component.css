@@ -1,0 +1,53 @@
+.page-title {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+}
+
+.course-card {
+  background: linear-gradient(135deg, #f0f8ff, #e6f2ff);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 600px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+}
+
+.course-card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.course-card p {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+.teacher-name {
+  color: #4a90e2;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.course-card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  border: none;
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.course-card button:hover {
+  background-color: #357ab8;
+}

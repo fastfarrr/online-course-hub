@@ -1,0 +1,23 @@
+<app-course-navbar></app-course-navbar>
+<h2 class="text-center text-primary mb-4">Enrolled Students</h2>
+
+<div class="container px-4">  <!-- Added container and padding-x -->
+  <div *ngIf="enrolledStudents.length > 0; else noData">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let student of enrolledStudents">
+        <div class="card shadow-lg mb-4">
+          <div class="card-body">
+            <h5 class="card-title text-success">{{ student.first_name }} {{ student.last_name }}</h5>
+            <p class="card-text"><strong>Email:</strong> {{ student.email }}</p>
+            <p class="card-text"><strong>Phone:</strong> {{ student.phone_number || 'Not Provided' }}</p>
+            <p class="card-text"><strong>Guardian:</strong> {{ student.guardian || 'Not Provided' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <div class="alert alert-info text-center">No students enrolled in this course.</div>
+  </ng-template>
+</div>

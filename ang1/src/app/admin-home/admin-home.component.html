@@ -1,0 +1,132 @@
+<app-logout-navbar></app-logout-navbar>
+<div class="container">
+  <h2>Admin Home</h2>
+
+  <!-- Teachers Section -->
+  <section>
+    <h3>Teachers</h3>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+          <th>Salary</th>
+          <th>Department</th>
+          <th>Experience</th>
+          <th>Delete</th>
+          <th>Edit</th>
+          <th>Approve</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let teacher of teachers">
+          <td>{{ teacher.first_name }}</td>
+          <td>{{ teacher.email }}</td>
+          <td>{{ teacher.address }}</td>
+          <td>{{ teacher.phone_number }}</td>
+          <td>{{ teacher.salary }}</td>
+          <td>{{ teacher.department }}</td>
+          <td>{{ teacher.experience }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteTeacher(teacher.id)">Delete</button>
+          </td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="editTeacher(teacher.id)">Edit</button>
+          </td>
+<td>
+  <button 
+    *ngIf="!teacher.is_staff" 
+    class="btn btn-success btn-sm" 
+    (click)="approveUser(teacher.user_id, 'teacher')">
+    Approve
+  </button>
+  <span *ngIf="teacher.is_staff" class="text-success">Approved</span>
+</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr />
+
+  <!-- Students Section -->
+  <section>
+    <h3>Students</h3>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+          <th>Guardian</th>
+          <th>Delete</th>
+          <th>Edit</th>
+          <th>Approve</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.first_name }}</td>
+          <td>{{ student.last_name }}</td>
+          <td>{{ student.email }}</td>
+          <td>{{ student.address }}</td>
+          <td>{{ student.phone_number }}</td>
+          <td>{{ student.guardian }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteStudent(student.id)">Delete</button>
+          </td>
+          <td>
+            <button class="btn btn-primary btn-sm" [routerLink]="['/admin-edit-student', student.id]">Edit</button>
+          </td>
+<td>
+  <button 
+    *ngIf="!student.is_staff" 
+    class="btn btn-success btn-sm" 
+    (click)="approveUser(student.user_id, 'student')">
+    Approve
+  </button>
+  <span *ngIf="student.is_staff" class="text-success">Approved</span>
+</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr />
+
+  <!-- Courses Section -->
+  <section>
+    <h3>Courses</h3>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Teacher</th>
+          <th>Created At</th>
+          <th>Delete</th>
+          <!-- <th>Edit</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses">
+          <td>{{ course.title }}</td>
+          <td>{{ course.description }}</td>
+          <td>{{ course.teacher_name }}</td>
+          <td>{{ course.created_at | date: 'medium' }}</td>
+          <td><button class="btn btn-danger btn-sm" (click)="deleteCourse(course.id)">Delete</button></td>
+          <!-- <td><button class="btn btn-primary btn-sm" (click)="editCourse(course.id)">Edit</button></td> -->
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Loading/Error Messages -->
+  <div *ngIf="loading">Loading data...</div>
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+</div>
+

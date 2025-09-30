@@ -1,0 +1,70 @@
+<!-- <p>studentregister works!</p> -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form #studentForm="ngForm" (ngSubmit)="Studentregister(studentForm.value)">
+          <div class="card shadow">
+            <div class="card-header bg-primary text-white text-center">
+              <h4>Student Registration</h4>
+            </div>
+            <div class="card-body">
+  
+              <div class="mb-3">
+                <label class="form-label" for="first_name">First Name</label>
+                <input ngModel required type="text" name="first_name" id="first_name"   class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label  class="form-label" for="last_name">Last Name</label>
+                <input ngModel required type="text" name="last_name" id="last_name"  class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input ngModel required type="email" name="email" id="email"  class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label" for="phone_number">Phone Number</label>
+                <input ngModel required type="number" name="phone_number" id="phone_number"  class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label" for="address">Address</label>
+                <input ngModel required type="text" name="address" id="address"  class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label" for="guardian">Guardian</label>
+                <input ngModel required type="text" name="guardian" id="guardian"  class="form-control">
+              </div>
+
+              <div class="mb-3">
+                <label for="user_type" class="form-label">Register As</label>
+                <select class="form-select" name="user_type" id="user_type" required ngModel>
+                  <option  value="student" selected>Student</option>
+                </select>
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label" for="username">Username</label>
+                <input ngModel required type="text" name="username" id="username"  class="form-control">
+              </div>
+  
+              <div class="mb-3">
+                <label class="form-label" for="password">Password</label>
+                <input ngModel required type="password" name="password" id="password"  class="form-control">
+              </div>
+  
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary" [disabled]="studentForm.invalid">Register</button>
+              </div>
+  
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

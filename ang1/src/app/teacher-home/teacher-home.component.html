@@ -1,0 +1,23 @@
+<!-- <p>teacher-home works!</p> -->
+<app-teacher-navbar></app-teacher-navbar>
+<div *ngIf="user" class="container mt-5">
+    <div class="card shadow-lg p-4 rounded">
+      <div class="card-body">
+        <h2 class="card-title text-primary">Welcome, {{ user.first_name }}!</h2>
+        <ul class="list-group list-group-flush mt-3">
+          <li class="list-group-item"><strong>Email:</strong> {{ user.email }}</li>
+          <li class="list-group-item"><strong>Address:</strong> {{ user.address }}</li>
+          <li class="list-group-item"><strong>Phone:</strong> {{ user.phone_number }}</li>
+          <li class="list-group-item"><strong>Experience:</strong> {{ user.experience }}</li>
+        </ul>
+      </div>
+    </div>
+<!--     
+    <div class="mt-4 text-center">
+      <button routerLink="/create-course" class="btn btn-success">Create New Course</button>&nbsp; &nbsp;
+      <button routerLink="/show-my-courses" class="btn btn-success">Show My Courses</button>
+    </div> -->
+
+  
+
+  </div>

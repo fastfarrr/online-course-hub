@@ -1,0 +1,37 @@
+<!-- <p>login works!</p> -->
+<!-- <app-login-navbar></app-login-navbar> -->
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+          <div class="card shadow">
+            <div class="card-header bg-success text-white text-center">
+              <h4>User Login</h4>
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" name="username"
+                  ngModel
+                  required
+                  class="form-control"
+                />
+              </div>
+  
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" ngModel required class="form-control" />
+              </div>
+  
+              <div class="d-grid">
+                <button type="submit" class="btn btn-success" [disabled]="loginForm.invalid"
+                >Login</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

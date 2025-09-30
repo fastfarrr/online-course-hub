@@ -1,0 +1,18 @@
+<app-student-navbar></app-student-navbar>
+<div *ngIf="user" class="container mt-5">
+  <div class="card shadow-lg p-4 rounded">
+    <div class="card-body">
+      <h2 class="card-title text-primary">Welcome, {{ user.first_name }}!</h2>
+      <ul class="list-group list-group-flush mt-3">
+        <li class="list-group-item"><strong>Email:</strong> {{ user.email }}</li>
+        <li class="list-group-item"><strong>Address:</strong> {{ user.address }}</li>
+        <li class="list-group-item"><strong>Phone:</strong> {{ user.phone_number }}</li>
+        <li class="list-group-item"><strong>Guardian:</strong> {{ user.guardian }}</li>
+      </ul>
+
+      <div class="mt-4 d-flex justify-content-center">
+        <button (click)="goToEditProfile()" class="btn btn-primary">Edit Profile</button>
+      </div>
+    </div>
+  </div>
+</div>
